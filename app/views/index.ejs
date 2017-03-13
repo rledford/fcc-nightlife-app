@@ -2,6 +2,18 @@
 <html>
     <head>
         <title>FCC Nightlife</title>
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+          var socket = io();
+          socket.connect()
+          socket.on('all', (call) => {
+            console.log(call);
+          });
+          sendServerMessage = () => {
+            console.log('sending message to server');
+            socket.emit('test', {this: 'this', that: 'that'});
+          }
+        </script>
     </head>
     <body>
         <form action='/search' method='post'>
@@ -9,5 +21,6 @@
             <input type='text' name='location'/>
             <button type='submit'>Search</button>
         </form>
+        <button onclick="sendServerMessage()">Send Message</button>
     </body>
 </html>

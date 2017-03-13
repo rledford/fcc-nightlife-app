@@ -2,10 +2,13 @@
 module.exports = function(){
    var express = require('express'),
       bodyParser = require('body-parser'),
+      cookieParser = require('cookie-parser'),
+      io = require('socket.io'),
       morgan = require('morgan'),
       cwd = process.cwd();
 
    var app = express();
+   var server = require('http').createServer(app);
 
    //configure middleware
    app.use(bodyParser.json());

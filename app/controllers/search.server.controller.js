@@ -8,7 +8,7 @@ var yelp = new Yelp({
 
 });
 
-exports.searchLocation = function (location, callback){
+exports.searchLocation = function (location){
     yelp.search({term: 'nightlife', location: location})
         .then( (data) => {
             console.log(data);

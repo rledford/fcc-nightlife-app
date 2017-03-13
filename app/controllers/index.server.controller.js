@@ -1,4 +1,6 @@
+var io = require('../../server').ioInstance;
 
 exports.render = (req, res) => {
-    res.render('index', {req: req});
+  console.log(io);
+  res.render('index', {req: req});
 }
