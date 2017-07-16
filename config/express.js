@@ -3,7 +3,6 @@ module.exports = function(){
    var express = require('express'),
       bodyParser = require('body-parser'),
       cookieParser = require('cookie-parser'),
-      io = require('socket.io'),
       morgan = require('morgan'),
       cwd = process.cwd();
 
